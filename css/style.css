@@ -1,0 +1,54 @@
+/*
+color palette for this project:
+Salmon Cookies Color Palette: https: //coolors.co/d6b575-a79a8c-a84631-504c3b-1f161c
+
+tan (Burlywood): D6B575
+grey (Grullo): A79A8C
+rust (Medium Carmine): A84631
+Grey/Green (Rifle Green): 504C3B
+purple/black (Xiketic): 1F161C
+*/
+
+h1 {
+  text-align: center;
+  margin-top: 70px;
+  font-size: xx-large;
+  color: #D6B575;
+  background-color: #1F161C;
+}
+
+body {
+  background-color: #A84631;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+h3 {
+  text-emphasis-style: bold;
+}
+
+table,
+td {
+  border: 1px solid;
+  background-color: #A79A8C;
+  color: #1F161C;
+}
+
+table,
+th {
+  background-color: #1F161C;
+  border: 1px solid;
+  border-color: #A79A8C;
+  color: #A79A8C;
+}
+
+li {
+  font-size: larger;
+
+}
+
+div {
+  margin-inline-start: 35px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
