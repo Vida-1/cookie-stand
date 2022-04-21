@@ -19,3 +19,46 @@ I built an app with a direct and powerful purpose. It does all of the things tha
 
 * How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?
 4/11/2022: This project is far from complete; hopefully I'll get some more of it done in the morning before class. I'll revisit the question upon re-submitting.
+
+4/12/2022 AM: At the end of day 1 I had the code setup below; the next morning I reviewed a couple of Constructor Function vids on youtube and see that I can re-work this to something much cleaner by employing Constructor Functions (yesterday's lecture that struck me as being akin "off the boat you go *shove!*" swimming lesson). 
+
+'use strict'
+
+var seattle = {
+  minHourlyCustomers: 23,
+  maxHourlyCustomers: 65,
+  avgCookiesPerCust: 6.3,
+  ranCustPerHour: function (minHourlyCustomers,maxHourlyCustomers,avgCookiesPerCust) {
+    return (math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) * this.avgCookiesPerCust);
+  }
+}
+  console.log(`shoe`); //test
+
+// var tokyo = {
+//   minHourlyCustomers: 3,
+//   maxHourlyCustomers: 24,
+//   avgCookiesPerCust: 1.2,
+//   ranCustomersPerHour: ,
+// }
+
+// var dubai = {
+//   minHourlyCustomers: 11,
+//   maxHourlyCustomers: 38,
+//   avgCookiesPerCust: 3.7,
+//   ranCustomersPerHour: ,
+// }
+
+// var paris = {
+//   minHourlyCustomers: 20,
+//   maxHourlyCustomers: 38,
+//   avgCookiesPerCust: 2.3,
+//   ranCustomersPerHour: ,
+// }
+
+// var lima = {
+//   minHourlyCustomers: 2,
+//   maxHourlyCustomers: 16,
+//   avgCookiesPerCust: 4.6,
+//   ranCustomersPerHour: ,
+// }
+
