@@ -20,6 +20,7 @@ function StoreConstructor(name, minHourlyCustomers, maxHourlyCustomers, avgCooki
     this.randomCustomersPerHour = [];
     this.grandTotalCookies = [];
     allStores.push(this);
+    //   this.tableReadout = renderToDom(); -did not work
 };
 
 StoreConstructor.prototype.generateRandomCustomersPerHour = function () {
@@ -86,5 +87,5 @@ allStores.forEach(store => {
     store.generateRandomCustomersPerHour()
     store.generateSimulatedCookiesPurchasedEachHour()
     store.generateGrandTotalCookies()
-    store.renderToDom()
+    store.renderToDom()  // calling this function here did not work and I don't know why!!! HELP!!!
 });
