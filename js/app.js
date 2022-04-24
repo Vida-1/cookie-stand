@@ -44,43 +44,47 @@ StoreConstructor.prototype.generateGrandTotalCookies = function () {
     this.grandTotalCookies.push(totalCookieAccumulator);
 };
 
+// Code Fellows TA Justin helped me with these next two arrow functions
+
 locationCatalog.forEach(location => {
     new StoreConstructor(location[0], location[1], location[2], location[3]);
 })
 console.log(allStores);
 
+StoreConstructor.prototype.renderToDom = function () {
+    // get on screen
+    const containerElem = document.getElementById('franchiseLocations');
+
+    // article
+    const articleElem = document.createElement('article');
+    containerElem.appendChild(articleElem);
+
+    // heading = this prints the name of the store location
+    const headingElem = doument.createElement('h2');
+    articleElem.appendChild(headingElem);
+    headingElem.textContent = this.name;
+
+    // ul
+    const ulElem = docment.createElement('ul');
+    articleElem.appendChild(ulElem);
+
+    // list items
+    for (let i = 0; i < this.hours.length; i++) {
+        const liElem = document.createElement('li');
+        ulElem.appendChild(liElem);
+        const timeSlot = hours[i];
+        const cookiesSoldThisHour = this.simulatedCookiesPurchasedEachHour[i];
+        liElem.textContent = `${timeSlot}: ${cookiesSoldThisHour}`;
+    }
+    // total sales
+    const liElem = document.createElement('li');
+    ulElem.appendChild(liElem);
+    liElem.textContent = 'Total: ' + this.grandTotalCookies;
+};
+
 allStores.forEach(store => {
     store.generateRandomCustomersPerHour()
     store.generateSimulatedCookiesPurchasedEachHour()
     store.generateGrandTotalCookies()
-})
-
-// This is how we push all this info over to the Sales.html sheet
-
-const storeDataContainer = 0;
-const article = 0;
-const storeName = 0;
-const ulElem = 0;
-const liElem = 0;
-const liElem2 = 0;
-
-// // seattle -- turn this into a loop
-// for (let i = 0; i < storeLocations; i++) {
-//     storeDataContainer = document.getElementById(storeLocations[i]);
-//     article = document.createElement('article');
-//     storeDataContainer.appendChild(article);
-//     storeName = document.createElement("h3");
-//     article.appendChild(TitleCase(storeLocations[i]));
-//     (TitleCase(storeLocations[i])).textContent = (storeLocations[i]).name;
-//     ulElem = document.createElement('ul');
-//     article.appendChild(ulElem);
-
-//     for (let i = 0; i < hours.length; i++) {
-//         liElem = document.createElement('li');
-//         ulElem.appendChild(liElem);
-//         liElem.textContent = hours[i] + ": " + seattle.simulatedCookiesPurchasedEachHour[i] + " cookies";
-//     }
-//     const liElem2 = document.createElement('li');
-//     ulElem.appendChild(liElem2);
-//     liElem2.textContent = "Total: " + seattle.grandTotalCookies + " cookies";
-// };
+    store.renderToDom()
+});
