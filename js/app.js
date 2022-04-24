@@ -53,29 +53,32 @@ console.log(allStores);
 
 StoreConstructor.prototype.renderToDom = function () {
     // get on screen
-    const containerElem = document.getElementById('franchiseLocations');
+    const containerElem = document.getElementById("franchiseLocations");
+
 
     // article
     const articleElem = document.createElement('article');
+    console.log(JSON.stringify(articleElem, null, 4));
     containerElem.appendChild(articleElem);
 
     // heading = this prints the name of the store location
-    const headingElem = doument.createElement('h2');
+    const headingElem = document.createElement('h2');
     articleElem.appendChild(headingElem);
     headingElem.textContent = this.name;
 
     // ul
-    const ulElem = docment.createElement('ul');
+    const ulElem = document.createElement('ul');
     articleElem.appendChild(ulElem);
 
     // list items
-    for (let i = 0; i < this.hours.length; i++) {
+    for (let i = 0; i < hours.length; i++) {
         const liElem = document.createElement('li');
         ulElem.appendChild(liElem);
         const timeSlot = hours[i];
         const cookiesSoldThisHour = this.simulatedCookiesPurchasedEachHour[i];
         liElem.textContent = `${timeSlot}: ${cookiesSoldThisHour}`;
     }
+
     // total sales
     const liElem = document.createElement('li');
     ulElem.appendChild(liElem);
@@ -83,8 +86,8 @@ StoreConstructor.prototype.renderToDom = function () {
 };
 
 allStores.forEach(store => {
-    store.generateRandomCustomersPerHour()
-    store.generateSimulatedCookiesPurchasedEachHour()
-    store.generateGrandTotalCookies()
-    store.renderToDom()
+    store.generateRandomCustomersPerHour();
+    store.generateSimulatedCookiesPurchasedEachHour();
+    store.generateGrandTotalCookies();
+    store.renderToDom();
 });
