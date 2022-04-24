@@ -20,6 +20,7 @@ function StoreConstructor(name, minHourlyCustomers, maxHourlyCustomers, avgCooki
     this.randomCustomersPerHour = [];
     this.grandTotalCookies = [];
     allStores.push(this);
+    //   this.tableReadout = renderToDom(); -did not work
 };
 
 StoreConstructor.prototype.generateRandomCustomersPerHour = function () {
@@ -86,8 +87,10 @@ StoreConstructor.prototype.renderToDom = function () {
 };
 
 allStores.forEach(store => {
+
     store.generateRandomCustomersPerHour();
     store.generateSimulatedCookiesPurchasedEachHour();
     store.generateGrandTotalCookies();
     store.renderToDom();
+
 });
