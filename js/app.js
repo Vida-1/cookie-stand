@@ -124,8 +124,6 @@ for (let i = 0; i < hourlyFranchiseSalesArr.length; i++) {
     greatestGrandTotal += hourlyFranchiseSalesArr[i];
 };
 
-
-
 const hourlyFranchiseSalesRow = document.createElement('tr');
 table.appendChild(hourlyFranchiseSalesRow);
 

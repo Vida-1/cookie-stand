@@ -9,15 +9,47 @@ Grey/Green (Rifle Green): 504C3B
 purple/black (Xiketic): 1F161C
 */
 
+section.first {
+  margin: 10px;
+  display: block;
+  background-color: red;
+}
+
+section.first img {
+  margin: 10px;
+  display: block;
+}
+
+section.second {
+  margin: 10px;
+  display: block;
+}
+
+section.second img {
+  margin: 10px;
+  display: block;
+}
+
+section.third {
+  margin: 10px;
+  display: block;
+}
+
+section.third img {
+  margin: 10px;
+  display: block;
+}
+
 h1 {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 30px;
   font-size: xx-large;
   color: #D6B575;
   background-color: #1F161C;
 }
 
 body {
+  max-width: 1100px;
   background-color: #A84631;
   margin-left: 30px;
   margin-right: 30px;
@@ -27,13 +59,28 @@ h3 {
   text-emphasis-style: bold;
 }
 
+header {
+  text-align: right;
+  font-size: larger;
+}
+
+header ul li {
+  display: inline-block;
+  padding: 0px 70px 0px 20px;
+  margin: 0px 20px 0px 0px;
+  font-style: oblique;
+}
+
 table {
   column-width: 100px;
   table-layout: fixed;
   text-align: right;
-
 }
 
+.schpiel {
+  float: right;
+  text-align: justify;
+}
 
 table,
 td {
@@ -41,7 +88,6 @@ td {
   background-color: #A79A8C;
   color: #1F161C;
   padding: 2px 6px 2px 2px;
-
 }
 
 table,
@@ -65,4 +111,10 @@ div {
   margin-inline-start: 35px;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+
+img {
+  width: 300px;
+
 }

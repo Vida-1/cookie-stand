@@ -1,5 +1,4 @@
 // copied from lab 05a
-
 {
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -13,11 +12,20 @@
     "es6": true
   },
   "rules": {
-    "eqeqeq": ["error", "always"],
+    "eqeqeq": [
+      "error",
+      "always"
+    ],
     "no-console": "off",
     "no-undefined": "off",
-    "indent": ["error", 2],
-    "quotes": ["warn", "single"],
+    "indent": [
+      "error",
+      2
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
     "no-multi-spaces": [
       "warn",
       {
@@ -34,11 +42,11 @@
         "builtinGlobals": true
       }
     ],
-    "semi": [2, "always"],
+    "semi": [
+      2,
+      "always"
+    ],
     "eol-last": "error"
   }
 }
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
+// © 2022 GitHub, Inc. Term Privacy Security
