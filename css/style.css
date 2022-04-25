@@ -9,13 +9,69 @@ Grey/Green (Rifle Green): 504C3B
 purple/black (Xiketic): 1F161C
 */
 
-section.first {
-  margin: 10px;
-  display: block;
-  background-color: red;
+#divOne {
+  display: flex;
+  text-align: justify;
+  padding: 20px;
+  margin-left: 50px;
+  align-content: center;
+  background-color: rgb(188, 188, 188);
 }
 
-section.first img {
+#divTwoA {
+  display: flex;
+  text-align: justify;
+  padding: 20px;
+  margin-left: 50px;
+  align-content: center;
+  background-color: rgb(188, 188, 188);
+}
+
+#divTwoB {
+  display: flex;
+  text-align: justify;
+  padding: 20px;
+  margin-left: 50px;
+  align-content: center;
+  background-color: rgb(188, 188, 188);
+}
+
+#divThreeA {
+  display: flex;
+  text-align: justify;
+  padding: 20px;
+  margin-left: 50px;
+  align-content: center;
+  background-color: rgb(188, 188, 188);
+  border-color: aqua;
+  border-width: 40px;
+}
+
+#divThreeB {
+  display: flex;
+  text-align: justify;
+  padding: 20px;
+  margin-left: 50px;
+  align-content: center;
+  background-color: rgb(188, 188, 188);
+  border-color: aqua;
+  border-width: 40px;
+}
+
+body h4 {
+  font-family: 'Franklin Gothic Medium',
+    'Arial Narrow',
+    Arial,
+    sans-serif;
+  font-style: bolder;
+  font-weight: 600px;
+}
+
+body h5 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section.first {
   margin: 10px;
   display: block;
 }
@@ -25,17 +81,7 @@ section.second {
   display: block;
 }
 
-section.second img {
-  margin: 10px;
-  display: block;
-}
-
 section.third {
-  margin: 10px;
-  display: block;
-}
-
-section.third img {
   margin: 10px;
   display: block;
 }
@@ -55,6 +101,12 @@ body {
   margin-right: 30px;
 }
 
+
+main {
+  max-width: 1050px;
+  align-self: stretch;
+}
+
 h3 {
   text-emphasis-style: bold;
 }
@@ -62,6 +114,7 @@ h3 {
 header {
   text-align: right;
   font-size: larger;
+  margin-bottom: 40px;
 }
 
 header ul li {
@@ -77,10 +130,6 @@ table {
   text-align: right;
 }
 
-.schpiel {
-  float: right;
-  text-align: justify;
-}
 
 table,
 td {
