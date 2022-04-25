@@ -10,6 +10,7 @@ let limaData = ['Lima', 2, 16, 4.6];
 
 let locationCatalog = [seattleData, tokyoData, dubaiData, parisData, limaData]
 let allStores = [];
+let hourlyFranchiseSalesArr = [];
 
 function StoreConstructor(name, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer) {
     this.name = name;
@@ -46,31 +47,27 @@ StoreConstructor.prototype.generateGrandTotalCookies = function () {
 
 StoreConstructor.prototype.renderRowToDom = function () {
 
-    const ulElem = document.createElement('tr');
-    articleElem.appendChild(ulElem);
-    const liElemFirst = document.createElement('td');
-    ulElem.appendChild(liElemFirst)
-    liElemFirst.textContent = this.name;
+    const tableRow = document.createElement('tr');
+    table.appendChild(tableRow);
+    const cellDataFirst = document.createElement('td');
+    tableRow.appendChild(cellDataFirst)
+    cellDataFirst.textContent = this.name;
 
     // table data cells
     for (let i = 0; i < hours.length; i++) {
-        const liElem = document.createElement('td');
-        ulElem.appendChild(liElem);
+        const cellDataElem = document.createElement('td');
+        tableRow.appendChild(cellDataElem);
         const cookiesSoldThisHour = this.simulatedCookiesPurchasedEachHour[i];
-        liElem.textContent = `${cookiesSoldThisHour}`;
+        cellDataElem.textContent = `${cookiesSoldThisHour}`;
     }
 
     // total sales column on the right
-    const liElem = document.createElement('td');
-    ulElem.appendChild(liElem);
-    liElem.textContent = this.grandTotalCookies;
-
+    const storeTotalDatum = document.createElement('td');
+    tableRow.appendChild(storeTotalDatum);
+    storeTotalDatum.textContent = this.grandTotalCookies;
 };
 
-
-//MAIN LOGIC STARTS HERE
-
-// Code Fellows TA Justin helped me with these next two arrow functions
+// Code Fellows TA Justin helped me with the two arrow functions used in this code base
 locationCatalog.forEach(location => {
     new StoreConstructor(location[0], location[1], location[2], location[3]);
 })
@@ -80,12 +77,12 @@ console.log(allStores);
 const containerElem = document.getElementById("franchiseLocations");
 
 // create a table
-const articleElem = document.createElement('Table');
-containerElem.appendChild(articleElem);
+const table = document.createElement('Table');
+containerElem.appendChild(table);
 
 // create a table header
 const headingElem = document.createElement('tr');
-articleElem.appendChild(headingElem);
+table.appendChild(headingElem);
 
 const hourDatumFirst = document.createElement('th');
 headingElem.appendChild(hourDatumFirst);
@@ -107,29 +104,41 @@ allStores.forEach(store => {
     store.renderRowToDom();
 });
 
-// create a table footer
-// const footerElem = document.createElement('tfoot');
-// .appendChild(footerElem);
-// footerElem.textContent('this is the footer');                                      // PLACEHOLDER TEXT WRITE FXN FOR THIS 
+
+// footer row 
+// find the sum of each hour's sales across all franchise locations 
+// then plug each hourly sum into a table data cell
+
+// with EXTREME thanks to my sister for helping me figure out how to structure this nested loop and noodle out the greatestGrandTotal (lines 112-124)!!
+for (let i = 0; i < hours.length; i++) {
+    let sum = 0;
+    //find each stores generated cookies for this hour i
+    allStores.forEach(store => {
+        sum += store.simulatedCookiesPurchasedEachHour[i];
+    });
+    hourlyFranchiseSalesArr.push(sum);
+}
+
+let greatestGrandTotal = 0;
+for (let i = 0; i < hourlyFranchiseSalesArr.length; i++) {
+    greatestGrandTotal += hourlyFranchiseSalesArr[i];
+};
 
 
-//alternate strategy psuedocode
-//populate store information to all stores  (ln 48 - 53 - globally being
-//  create table (ln 54-59)
-//  create a header row (doesnt exist yet but likely starts at 61 - 64)
-//  for each store in allstores (ln 91-96)
-//      create a row (ln 95 renderRowToDom)
-//      populate name and hours as cell data (see render row to dom function)
-//      populate cookies total as final cell in row (see end of render row to dom function)
-//  create final row with totals (doesnt exist yet)
 
+const hourlyFranchiseSalesRow = document.createElement('tr');
+table.appendChild(hourlyFranchiseSalesRow);
 
+const hourlyFranchiseSalesLabel = document.createElement('th');
+hourlyFranchiseSalesRow.appendChild(hourlyFranchiseSalesLabel);
+hourlyFranchiseSalesLabel.textContent = "Totals";
 
-    // // list items -- junk pile
-    // for (let i = 0; i < hours.length; i++) {
-    //     const liElem = document.createElement('td');
-    //     ulElem.appendChild(liElem);
-    //     const storeName = this.name;
-    //     const timeSlot = hours[i];
-    //     const cookiesSoldThisHour = this.simulatedCookiesPurchasedEachHour[i];
-    //     liElem.textContent = `${timeSlot}: ${cookiesSoldThisHour}`;
+for (let i = 0; i < hours.length; i++) {
+    const hourlyFranchiseSales = document.createElement('th');
+    hourlyFranchiseSalesRow.appendChild(hourlyFranchiseSales);
+    hourlyFranchiseSales.textContent = hourlyFranchiseSalesArr[i];
+}
+
+const grandestTotalSoldElem = document.createElement('th');
+hourlyFranchiseSalesRow.appendChild(grandestTotalSoldElem);
+grandestTotalSoldElem.textContent = greatestGrandTotal;
