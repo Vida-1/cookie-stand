@@ -140,3 +140,11 @@ for (let i = 0; i < hours.length; i++) {
 const grandestTotalSoldElem = document.createElement('th');
 hourlyFranchiseSalesRow.appendChild(grandestTotalSoldElem);
 grandestTotalSoldElem.textContent = greatestGrandTotal;
+
+// Lab 9 stuff here -- add a button, add event & event handling to add a new store
+
+function clickHandler() {
+    alert("I was clicked");
+}
+const buttonElem = document.getElementById('addNewStoreBtn');
+buttonElem.addEventListener('click', clickHandler);
