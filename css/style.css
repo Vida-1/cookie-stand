@@ -28,7 +28,6 @@ purple/black (Xiketic): 1F161C
 }
 
 #divTwoB {
-  display: flex;
   text-align: justify;
   padding: 20px;
   margin-left: 50px;
@@ -37,7 +36,6 @@ purple/black (Xiketic): 1F161C
 }
 
 #divThreeA {
-  display: flex;
   text-align: justify;
   padding: 20px;
   margin-left: 50px;
@@ -48,7 +46,6 @@ purple/black (Xiketic): 1F161C
 }
 
 #divThreeB {
-  display: flex;
   text-align: justify;
   padding: 20px;
   margin-left: 50px;
@@ -78,12 +75,14 @@ section.first {
 
 section.second {
   margin: 10px;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 section.third {
   margin: 10px;
-  display: block;
+  display: flex;
+  flex-direction: row;
 }
 
 h1 {
